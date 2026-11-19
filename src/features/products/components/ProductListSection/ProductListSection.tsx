@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Pagination from "@/components/ui/Pagination/Pagination";
 import SearchInput from "@/components/ui/SearchInput/SearchInput";
 import { useProductListParams } from "../../hooks/useProductListParams";
 import { useProducts } from "../../hooks/useProducts";
@@ -66,6 +67,11 @@ export default function ProductListSection() {
               <div className={isFetching ? styles.fetching : undefined}>
                 <ProductGrid products={data.items} />
               </div>
+              <Pagination
+                  currentPage={Math.min(params.page, data.totalPages)}
+                  totalPages={data.totalPages}
+                  onChange={handlePageChange}
+              />
             </>
           )}
         </div>
