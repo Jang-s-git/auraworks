@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import "./globals.css";
+import Providers from "@/app/providers";
 
 export const metadata: Metadata = {
   title: "스토어 | HIDDEN KICE",
@@ -13,9 +14,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="ko">
       <head></head>
       <body>
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
