@@ -45,7 +45,6 @@
   color: var(--color-gray-300);
 }
 
-/* 브라우저 기본 search clear 버튼 제거 (디자인의 X 아이콘 사용) */
 .input::-webkit-search-cancel-button {
   appearance: none;
 }
