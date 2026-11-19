@@ -1,0 +1,66 @@
+.box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 250px;
+  padding: 8px;
+  border: 1px solid var(--color-gray-100);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  transition: border-color 0.15s ease;
+}
+
+.box:focus-within {
+  border-color: var(--color-primary);
+}
+
+.field {
+  display: flex;
+  flex: 1 0 0;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.icon {
+  flex-shrink: 0;
+}
+
+.input {
+  flex: 1 0 0;
+  min-width: 0;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font-size: var(--text-default);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-default);
+  color: var(--color-gray-800);
+}
+
+.input::placeholder {
+  color: var(--color-gray-300);
+}
+
+/* 브라우저 기본 search clear 버튼 제거 (디자인의 X 아이콘 사용) */
+.input::-webkit-search-cancel-button {
+  appearance: none;
+}
+
+.clear {
+  display: flex;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.clear:disabled {
+  cursor: default;
+}
+
+.clear img {
+  display: block;
+}

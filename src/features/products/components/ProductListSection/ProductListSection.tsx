@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import SearchInput from "@/components/ui/SearchInput/SearchInput";
 import { useProductListParams } from "../../hooks/useProductListParams";
 import { useProducts } from "../../hooks/useProducts";
 import ProductGrid, { ProductGridSkeleton } from "../ProductGrid/ProductGrid";
@@ -36,6 +37,12 @@ export default function ProductListSection() {
         </h2>
 
         <div className={styles.toolbar}>
+          <SearchInput
+              value={keywordInput}
+              onChange={setKeywordInput}
+              onSubmit={(value) => setKeyword(value)}
+              onClear={handleClear}
+          />
           <ProductTypeTabs value={params.type} onChange={setType} />
         </div>
 

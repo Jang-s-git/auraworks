@@ -1,7 +1,6 @@
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import type { Product, ProductListParams, ProductListResult, ProductType } from "../types";
 
-/** DB 레코드 (snake_case) */
 interface ProductRow {
   id: number;
   title: string;
@@ -27,16 +26,10 @@ function toProduct(row: ProductRow): Product {
   };
 }
 
-/** LIKE 패턴 특수문자(%, _, \) 이스케이프 */
 function escapeLikePattern(value: string): string {
   return value.replace(/[\\%_]/g, (char) => `\\${char}`);
 }
 
-/**
- * 상품 목록 조회 (검색 + 타입 필터 + 페이지네이션).
- * 데이터 소스가 바뀌어도(예: 자체 API 서버) 이 함수만 교체하면 되도록
- * 화면은 도메인 타입(Product)만 알게 한다.
- */
 export async function fetchProducts({
   keyword,
   type,
