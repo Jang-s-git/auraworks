@@ -7,9 +7,7 @@ import styles from "./SearchInput.module.css";
 interface SearchInputProps {
   value: string;
   onChange: (value: string) => void;
-  /** Enter 입력 시 즉시 검색 */
   onSubmit?: (value: string) => void;
-  /** X 버튼 클릭 */
   onClear?: () => void;
   placeholder?: string;
   label?: string;
