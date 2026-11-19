@@ -1,0 +1,59 @@
+/* 1280px 컨테이너에 250px 카드 4열, 양끝 정렬 (시안: justify-between) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  justify-content: space-between;
+  row-gap: 36px;
+  width: 100%;
+}
+
+/* 긴 상품명(nowrap + ellipsis)이 그리드 트랙을 넘지 않도록 */
+.grid > li {
+  min-width: 0;
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 250px));
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+    row-gap: 28px;
+  }
+}
+
+/* Skeleton */
+.skeletonCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeletonThumb,
+.skeletonLine {
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, #f1f2f4 25%, #e9eaec 37%, #f1f2f4 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+}
+
+.skeletonThumb {
+  aspect-ratio: 250 / 320;
+}
+
+.skeletonLine {
+  height: 18px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}

@@ -1,0 +1,80 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.thumbnail {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 250 / 320;
+  overflow: hidden;
+  border: 1px solid var(--color-gray-50);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+}
+
+.image {
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  min-height: 107px;
+  font-size: var(--text-default);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-default);
+}
+
+.type {
+  color: var(--color-gray-300);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.title {
+  font-size: inherit;
+  font-weight: inherit;
+  color: var(--color-black);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.priceGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.originalPrice {
+  font-size: var(--text-small);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--leading-small);
+  color: var(--color-gray-200);
+}
+
+.originalPrice del {
+  text-decoration: line-through;
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.discount {
+  color: var(--color-secondary);
+}
+
+.price {
+  color: var(--color-black);
+  white-space: nowrap;
+}

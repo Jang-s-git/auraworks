@@ -1,0 +1,26 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: var(--text-default);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-default);
+  white-space: nowrap;
+}
+
+.tab {
+  color: var(--color-gray-300);
+  transition: color 0.15s ease;
+}
+
+.tab:hover {
+  color: var(--color-gray-500);
+}
+
+.tab.active {
+  color: var(--color-gray-800);
+}
+
+.divider {
+  color: var(--color-gray-300);
+}
